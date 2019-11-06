@@ -1,0 +1,36 @@
+.table{
+	font-size: 12px;
+}
+
+.classbulkwtableshead { 
+background-color: #00CC66;
+color: white; 
+font-weight: bold;
+font-size: 14px;
+}
+
+.classbulkwtablesfoot { 
+background-color: #ccc;
+color: white; 
+font-weight: bold;
+font-size: 14px;
+}
+
+.user-header {
+color: beige !important; 
+font-weight: bold;
+font-size: 20px;
+
+}
+
+.table-lista-contactos{
+font-size: 14px;
+max-height: 300px;
+overflow-y: scroll;
+}
+
+.home {
+  margin: 0;
+  padding: 0;
+  text-align: center;	
+}

@@ -1,0 +1,11 @@
+# Logs
+logs
+*.log
+
+#Connection
+clases/conexion.php
+
+#Folders
+static/img/*
+download/*
+
