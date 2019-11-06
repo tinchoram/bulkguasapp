@@ -1,5 +1,4 @@
-![BulkGuasapp](https://tinchoram.com.ar/bulkguasapp/static/img/small_bulklogo.png) 
-# Welcome to BulkGuasapp! 
+# Welcome to BulkGuasapp! ![BulkGuasapp](https://tinchoram.com.ar/bulkguasapp/static/img/small_bulklogo.png)
 
 Hi, I'm Tinchoram, presented this GNU GPL project. **Bulkguasapp** is a platform for automated whatsapp delivery, using **WebDriver for Chrome** and **python**. It also includes a **php** website connected to a **mysql** database for managing the messages sent.
 
@@ -14,4 +13,4 @@ Hi, I'm Tinchoram, presented this GNU GPL project. **Bulkguasapp** is a platform
 
 ## Platform
 
- - Available in tinchoram.com/bulkguasapp/
+ - Available in [tinchoram.com/bulkguasapp](http://tinchoram.com/bulkguasapp/)
