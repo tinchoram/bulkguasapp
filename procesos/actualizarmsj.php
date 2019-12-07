@@ -13,7 +13,8 @@ else {
 	$datos=array(
 		$_POST['idmensaje'],
 		$_POST['nameU'],
-		$_POST['messageU']
+		$_POST['messageU'],
+		$_POST['mediapathU'],
 				);
 	
 	/*error_log("¡array! ", 3, "my-errors.log");*/			

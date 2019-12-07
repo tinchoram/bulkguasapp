@@ -131,6 +131,8 @@ else {
             <input type="text" readonly class="form-control input-sm" id="nameM" name="nameM">
             <label>Descripcion</label>
             <textarea readonly class="form-control" rows="5" id="message" name="message"></textarea>
+            <label>Media Path</label>
+            <textarea readonly class="form-control" rows="2" id="mediapathM" name="mediapathM"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -243,6 +245,7 @@ else {
         $('#idmensaje').val(datos['id']);
         $('#nameM').val(datos['name']);
         $('#message').val(datos['message']);
+        $('#mediapathM').val(datos['mediapath']);
         }
     });
   }

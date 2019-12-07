@@ -29,10 +29,12 @@
 			$obj= new conectar();
 			$conexion=$obj->conexion();
 
-			$sql="INSERT into message (NAME,MESSAGE,USERID)
+			$sql="INSERT into message (NAME,MESSAGE,MEDIAPATH,USERID)
 									values ('$datos[0]',
 											'$datos[1]',
-											'$datos[2]')";
+											'$datos[2]',
+											'$datos[3]')";
+			error_log("¡QUERY! $sql", 3, "my-errors.log");								
 			return mysqli_query($conexion,$sql);
 		}
 
@@ -127,7 +129,7 @@
 			$obj= new conectar();
 			$conexion=$obj->conexion();
 
-			$sql="SELECT IDMESSAGE,NAME,MESSAGE
+			$sql="SELECT IDMESSAGE,NAME,MESSAGE,MEDIAPATH
 					from  message
 					where IDMESSAGE='$idmensaje'";
 			$result=mysqli_query($conexion,$sql);
@@ -136,7 +138,8 @@
 			$datos=array(
 				'id' => $ver[0],
 				'name' => $ver[1],
-				'message' => $ver[2]
+				'message' => $ver[2],
+				'mediapath' => $ver[3]
 				);
 			return $datos;
 		}
@@ -254,7 +257,7 @@
 			$obj= new conectar();
 			$conexion=$obj->conexion();
 
-			$sql="UPDATE message set name='$datos[1]',MESSAGE='$datos[2]' where IDMESSAGE='$datos[0]'";
+			$sql="UPDATE message set name='$datos[1]',MESSAGE='$datos[2]',MEDIAPATH='$datos[3]' where IDMESSAGE='$datos[0]'";
 			/*error_log("¡Lo echaste a perder! $sql", 3, "my-errors.log");*/
 			return mysqli_query($conexion,$sql);
 		}
@@ -267,7 +270,7 @@
 			NICKNAME='$datos[3]',PHONE='$datos[4]',DNI='$datos[5]',
 			ADDRESS='$datos[6]',LOCATION='$datos[7]' 
 			where ID='$datos[0]'";
-			error_log("Query: $sql", 3, "my-errors.log");
+			//error_log("Query: $sql", 3, "my-errors.log");
 			return mysqli_query($conexion,$sql);
 		}
 		
@@ -285,7 +288,7 @@
 			$conexion=$obj->conexion();
 
 			$sql="UPDATE lot set name='$datos[1]',description='$datos[2]',idmessage='$datos[3]',idsegment='$datos[4]' where IDLOT='$datos[0]'";
-			error_log("¡QUERY! $sql", 3, "my-errors.log");
+			//error_log("¡QUERY! $sql", 3, "my-errors.log");
 			return mysqli_query($conexion,$sql);
 		}
 

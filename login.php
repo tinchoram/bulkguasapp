@@ -15,9 +15,12 @@
     $obj= new conectar();
     $conexion=$obj->conexion();
     $sql = "SELECT id, user, password FROM user WHERE USER = '$user' AND STATUS = 1";
-
-    //error_log("¡query! $sql", 3, "my-errors.log");
+    
     $result=mysqli_query($conexion,$sql); 
+
+    //$mDate=new DateTime();
+    //$hoy=$mDate->format("Y-m-d H:i:s");   
+    //error_log("New Login $hoy : "."$user"."\n", 3, "my-errors.log");
 
     $message = '';
    

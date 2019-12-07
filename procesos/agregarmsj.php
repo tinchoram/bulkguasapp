@@ -10,9 +10,13 @@ else {
 	require_once "../clases/crud.php";
 	$obj= new crud();
 
+
+	//error_log("ACA: ".$_FILES['mediapath']["name"], 3, "my-errors.log");
+
 	$datos=array(
 		$_POST['name'],
 		$_POST['message'],
+		$_POST['mediapath'],
 		$_SESSION['user_id']
 				);
 

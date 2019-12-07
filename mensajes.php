@@ -50,11 +50,13 @@ else {
 					</button>
 				</div>
 				<div class="modal-body">
-					<form id="frmnuevo">
+					<form id="frmnuevo" enctype="multipart/form-data" method="post">
 						<label>Nombre</label>
 						<input type="text" class="form-control input-sm" id="name" name="name">
-            <label>Mensaje</label>
-            <textarea class="form-control" rows="5" id="message" name="message"></textarea>
+            			<label>Mensaje</label>
+            			<textarea class="form-control" rows="5" id="message" name="message"></textarea>
+            			<label>Media Path</label>
+            			<input class="form-control" type="file" id="mediapath" name="mediapath">
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -77,12 +79,15 @@ else {
 					</button>
 				</div>
 				<div class="modal-body">
-					<form id="frmnuevoU">
+					<form id="frmnuevoU" enctype="multipart/form-data" method="post">
 						<input type="text" hidden="" id="idmensaje" name="idmensaje">
 						<label>Nombre</label>
 						<input type="text" class="form-control input-sm" id="nameU" name="nameU">
-            <label>Mensaje</label>
-            <textarea class="form-control" rows="5" id="messageU" name="messageU"></textarea>
+           				<label>Mensaje</label>
+            			<textarea class="form-control" rows="5" id="messageU" name="messageU"></textarea>
+            			<label>Media Path</label>
+            			<input type="text" readonly class="form-control input-sm" id="mediapathUn" name="mediapathUn">
+            			<input class="form-control" type="file" id="mediapathU" name="mediapathU">
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -99,20 +104,25 @@ else {
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#btnAgregarnuevo').click(function(){
-			datos=$('#frmnuevo').serialize();
+			var datos=$('#frmnuevo').serialize();
+			var name = '';
 
+			if(typeof(document.getElementById('mediapath').files[0]) === 'undefined'){
+			} else {
+			 name = document.getElementById('mediapath').files[0].name;	
+			}
 			$.ajax({
 				type:"POST",
-				data:datos,
+				data:datos+ '&mediapath=' + name,
 				url:"procesos/agregarmsj.php",
 				success:function(r){
 					if(r==1){
 						$('#frmnuevo')[0].reset();
 						$('#tablaDatatableMSJ').load('tablamensajes.php');
-						alertify.success("La campaña se creo correctamente");
+						alertify.success("El Mensaje se creo correctamente");
 						$('#agregarnuevosdatosmodal').modal('hide');
 					}else{
-						alertify.error("Fallo al crear campaña");
+						alertify.error("Fallo al crear Mensaje");
 					}
 				}
 			});
@@ -120,10 +130,16 @@ else {
 
 		$('#btnActualizar').click(function(){
 			datos=$('#frmnuevoU').serialize();
+			var name = '';
+
+			if(typeof(document.getElementById('mediapathU').files[0]) === 'undefined'){
+			} else {
+			 name = document.getElementById('mediapathU').files[0].name;	
+			}
 
 			$.ajax({
 				type:"POST",
-				data:datos,
+				data:datos+ '&mediapathU=' + name,
 				url:"procesos/actualizarmsj.php",
 				success:function(r){
 					if(r==1){
@@ -155,6 +171,7 @@ else {
 				$('#idmensaje').val(datos['id']);
 				$('#nameU').val(datos['name']);
 				$('#messageU').val(datos['message']);
+				$('#mediapathUn').val(datos['mediapath']);
 				}
 		});
 	}

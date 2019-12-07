@@ -21,9 +21,10 @@ else {
 
     <h1><img src="static/img/small_bulklogo.png" th:src="@{static/img/small_bulklogo.png}"/>BulkGuasapp</h1>
     
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/AVUahD9cfGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OAdF0P-hlho" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    <h2><a href="download/BulkGuasapp_v1.0.rar"><span class="fa fa-download"></span>Descargar</a></h2>
+    <h2><a href="download/BulkGuasapp_v2.0.rar"><span class="fa fa-download"></span>Descargar .rar</a></h2>
+    <!--<h2><a href="download/BulkGuasapp_v1.1.zip"><span class="fa fa-download"></span>Descargar .zip</a></h2>-->
 
     <div class="card-footer">
             <a class="row justify-content-center" target="_blank" href="http://tinchoram.com.ar/">By Tinchoram</a>

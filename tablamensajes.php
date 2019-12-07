@@ -12,7 +12,7 @@ require_once "clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();
 
-$sql="SELECT IDMESSAGE,IDCAMPANA,NAME,MESSAGE from message where USERID = '$user_id'";
+$sql="SELECT IDMESSAGE,IDCAMPANA,NAME,MESSAGE,MEDIAPATH from message where USERID = '$user_id'";
 $result=mysqli_query($conexion,$sql);
 ?>
 
@@ -24,6 +24,7 @@ $result=mysqli_query($conexion,$sql);
 				<td>ID</td>
 				<td>Nombre</td>
 				<td>Mensaje</td>
+				<td>Media Path</td>
 				<td>Editar</td>
 				<td>Eliminar</td>
 			</tr>
@@ -33,6 +34,7 @@ $result=mysqli_query($conexion,$sql);
 				<td>ID</td>
 				<td>Nombre</td>
 				<td>Mensaje</td>
+				<td>Media Path</td>
 				<td>Editar</td>
 				<td>Eliminar</td>
 			</tr>
@@ -45,6 +47,7 @@ $result=mysqli_query($conexion,$sql);
 					<td><?php echo $mostrar[0] ?></td>
 					<td><?php echo $mostrar[2] ?></td>
 					<td><?php echo $mostrar[3] ?></td>
+					<td><?php echo $mostrar[4] ?></td>
 					<td style="text-align: center;">
 						<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizar('<?php echo $mostrar[0] ?>')">
 							<span class="fa fa-pencil-square-o"></span>

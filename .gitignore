@@ -4,6 +4,7 @@ logs
 
 #Connection
 clases/conexion.php
+python/connections/*
 
 #Folders
 static/img/*
