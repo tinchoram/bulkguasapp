@@ -13,5 +13,5 @@ Hi, I'm Tinchoram, presented this GNU GPL project. **Bulkguasapp** is a platform
 
 ## Platform
 
- - Available in [tinchoram.com/bulkguasapp](http://tinchoram.com/bulkguasapp/)
+ - Available in [tinchoram.com.ar/bulkguasapp](http://tinchoram.com.ar/bulkguasapp/)
  - Available [Video Demo](https://www.youtube.com/watch?v=OAdF0P-hlho&t=20s)
